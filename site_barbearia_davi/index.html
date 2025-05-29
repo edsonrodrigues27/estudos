@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia do Davi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+  function enviarParaWhatsApp(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById("nome").value;
+    const telefone = document.getElementById("telefone").value;
+    const dataHora = document.getElementById("dataHora").value;
+    const mensagem = document.getElementById("mensagem").value;
+
+    const numero = "5581987589963"; // Exemplo: 5599999999999
+    const texto = `Olá! Gostaria de agendar um horário:%0A
+Nome: ${nome}%0A
+Telefone: ${telefone}%0A
+Data e Hora: ${dataHora}%0A
+Serviço: ${mensagem}`;
+
+    const url = `https://wa.me/${numero}?text=${texto}`;
+
+    window.open(url, "_blank");
+  }
+</script>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Davi Barber Shop</div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+          <div></div><div></div><div></div>
+        </div>
+        <ul class="menu" id="menu">
+          <li><a href="#home">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#galeria">Geleria</a></li>
+          <li><a href="#contato">Agendamento</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home">
+   
+  </section>
+
+  <section id="servicos" class="container">
+    <h2>Serviços</h2>
+    <ul>
+      <li>Corte Masculino</li>
+      <li>Barba</li>
+      <li>Corte Infantil</li>
+      <li>Pacote Especial</li>
+    </ul>
+  </section>
+ 
+  <section id="galeria" class="container">
+    
+    <img src="imagens/barba.png" alt="Corte 1">
+    <img src="imagens/barbeiro.png" alt="Corte 2">
+    <img src="imagens/hidratacao.png" alt="Corte 3">
+  </section>
+
+  <section id="contato" class="container">
+    <h2>Agende Seu Horário</h2>
+     <form id="formAgendamento" onsubmit="enviarParaWhatsApp(event)">
+  <input type="text" id="nome" placeholder="Nome completo" required>
+  <input type="tel" id="telefone" placeholder="Telefone/WhatsApp" required>
+  <input type="datetime-local" id="dataHora" required>
+  <textarea id="mensagem" rows="4" placeholder="Serviço desejado ou observações..."></textarea>
+  <button type="submit">Enviar Agendamento</button>
+</form>
+  </section><br>
+
+     <section id="horario" class="container">
+  <h2>Horário de Funcionamento</h2>
+  <ul style="list-style: none; padding: 0; max-width: 400px; margin: auto; font-size: 18px;">
+    <li><strong>Segunda a Sábado:</strong> 09:00 – 20:00 <strong>Domingo</strong>09:00–12:00</li>
+  </ul>
+     </section> 
+
+</body>
+</html>
+    
+    <section id="contato">
+        
+        <h2>Endereço</h2>
+        <p>📞 (81) 9 9829-5400</p>
+        <p>📍R. Arão Lins de Andrade, 560 - PrazeresJaboatão dos Guararapes - PE, 54400-200 </p>
+        <p>🕒 Seg a Sáb: 8h - 20h, Dom:8h - 12h.</p><br>
+         <div class="mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.
+                391642663416!2d-34.9242273!3d-8.1632385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768
+                !4f13.1!3m3!1m2!1s0x7aae1c0a3c3d449%3A0xd4d54524529dc055!2sR.%20Ar%C3%A3o%
+                20Lins%20de%20Andrade%2C%20560%20-%20Prazeres%2C%20Jaboat%C3%A3o%20dos%20
+                Guararapes%20-%20PE%2C%2054400-200!5e0!3m2!1spt-BR!2sbr!4v1748306521765!5m2!1spt-BR!2sbr"
+                 width="200" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>  
+    </section>
+
+  
+
+     <footer>
+    <p>&copy; 2025 Criado Por Edson Rogrigues. Todos os Direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
